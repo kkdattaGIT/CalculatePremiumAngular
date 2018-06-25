@@ -4,13 +4,13 @@
     <label>Name:&nbsp;</label>
 </div>
 <div class="col-sm-10">
-    <input [(ngModel)]="name" id="name" /><br />
+    <input [(ngModel)]="name" id="name"  placeholder="enter Name" /><br />
 </div>
 <div class="col-sm-2">
     <label>Date of Birth:&nbsp;</label>
 </div>
 <div class="col-sm-10">
-    <input [(ngModel)]="dob" /><br />
+    <input [(ngModel)]="dob" placeholder="dd-mm-yyyy" ngModel pattern="[a-zA-Z ]*" /><br />
 </div>
 <div class="col-sm-2">
     <label>Gender:&nbsp;</label>

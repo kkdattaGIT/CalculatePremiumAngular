@@ -7,7 +7,7 @@
 
 - Add error block for displaying Validation error / error response from API
   
-##API
+## API
 - Validate parameter (Date of Birth & Gender)
 - Add swagger
 - Add Unit tests

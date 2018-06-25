@@ -40,5 +40,22 @@ namespace CalculatePremium.Controllers
                 }
             }
         }
-    }
+
+        private static Dictionary<string, double> genderFactor = new Dictionary<string, double>()
+        {
+            {"M",1.2},
+            {"F",1.1}
+        };
+
+
+        [HttpGet("premium/{name}/{dob}/{gender}")]
+        public IActionResult getPremium(string name, string dob, string gender)
+        {
+            return Ok("2000");
+        }
+
+        public class PremiumData {
+           public string Premium;    
+        }
+}
 }

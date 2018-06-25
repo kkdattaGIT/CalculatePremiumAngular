@@ -51,11 +51,28 @@ namespace CalculatePremium.Controllers
         [HttpGet("premium/{name}/{dob}/{gender}")]
         public IActionResult getPremium(string name, string dob, string gender)
         {
-            return Ok("2000");
+            //Age * GenderFactor * 100
+            var res = new DateTime();
+            if (DateTime.TryParse(dob, out res))
+            {
+                var age = DateTime.Now - res;
+                var ageYears = DateTime.MinValue.Add(age).Year - 1;
+                if(ageYears>=18 && ageYears <=65)
+                {
+                    var Premium = ageYears * genderFactor[gender] * 100;
+                    return Ok(Premium);
+                }
+                else
+                {
+                    return Ok("Age is not in the range");
+                }
+                
+            }
+            else
+            {
+                return BadRequest("Failed to calculate Premium");
+            }
         }
-
-        public class PremiumData {
-           public string Premium;    
-        }
+        
 }
 }
